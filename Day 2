@@ -1,4 +1,4 @@
-#LONELY INTEGER
+###LONELY INTEGER###
 
 #!/bin/python3
 
@@ -52,11 +52,11 @@ if __name__ == '__main__':
 
 
 
+###DIAGONAL DIFFERENCE###
 
 
 
 
-#DIAGONAL DIFFERENCE 
 #!/bin/python3
 
 import math
@@ -121,11 +121,11 @@ if __name__ == '__main__':
 
 
 
+###COUNTING SORT###
 
 
 
 
-#COUNTING SORT
 #!/bin/python3
 
 import math
