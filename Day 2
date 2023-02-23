@@ -54,9 +54,6 @@ if __name__ == '__main__':
 
 ###DIAGONAL DIFFERENCE###
 
-
-
-
 #!/bin/python3
 
 import math
@@ -122,9 +119,6 @@ if __name__ == '__main__':
 
 
 ###COUNTING SORT###
-
-
-
 
 #!/bin/python3
 
