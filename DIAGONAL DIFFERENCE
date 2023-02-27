@@ -1,0 +1,62 @@
+###DIAGONAL DIFFERENCE###
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'diagonalDifference' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def diagonalDifference(arr):
+    # Write your code here
+    i, j = 0, 0
+    while i < n-1 and j < n-1:
+        i += 1
+        j += 1
+        if -100 <= arr[i][j] <= 100:
+            continue
+        
+    a, b = 0, 0
+    d1 = []
+    while a < n and b < n:
+        d1.append(arr[a][b])
+        a += 1
+        b += 1
+    sum1 = sum(d1)
+    
+    a , b = 0, n
+    d2 = []
+    while a < n and b >= 0:
+        d2.append(arr[a][b-1])
+        a += 1
+        b -= 1
+    sum2 = sum(d2)
+    
+    result = abs(sum1 - sum2)
+    return result
+
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
