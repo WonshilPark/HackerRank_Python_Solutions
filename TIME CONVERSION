@@ -1,0 +1,57 @@
+###TIME CONVERSION###
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    # Write your code here
+    zone = s[-2:] #PM/AM
+    hr = int(s[:2])  #hours
+    
+    if zone == 'PM' and hr < 12:
+        hr += 12
+        s_hr = str(hr)
+        new = s_hr + s[2:-2]
+    
+    if zone == 'PM' and hr == 12:
+        s_hr = str(hr)
+        new = s_hr + s[2:-2]
+        
+    if zone == 'AM' and hr == 12:
+        s_hr = '00'
+        new = s_hr + s[2:-2]
+        
+    if zone == 'AM' and hr < 10:
+        s_hr = '0' + str(hr)
+        new = s_hr + s[2:-2]
+    
+    if zone == 'AM' and 10 < hr < 12:
+        s_hr = str(hr)
+        new = s_hr + s[2:-2]
+    
+    return new
+            
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
